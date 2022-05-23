@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+    <div style="color:red">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <h2>medical Streamline Process Prediction</h2>
+
+
+            <br><br>
+
+
+            <label>Patient Age :- </label><br><br>
+            <input id="age" name="Patient_age" required="required">
+            
+            
+            <br><br>
+
+
+            <label>Patient Gender :- </label><br><br>
+
+            <select name="gender" id="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+            <br><br>
+
+            <label for="Test">Name of the test? </label>
+
+            <br><br>
+            <select name="med_test" id="test">
+            <option value="Complete Urinalysis">Complete Urinalysis</option>
+            <option value="CBC">CBC</option>
+            <option value="Acute kidney profile">Acute kidney profile</option>
+            <option value="Fasting blood sugar">Fasting blood sugar</option>
+            <option value="RTPCR">RTPCR</option>
+            <option value="TSH">TSH</option>
+            <option value="Vitamin D-25Hydroxy">Vitamin D-25Hydroxy</option>
+            <option value="Lipid Profile">Lipid Profile</option>
+            <option value="H1N1">H1N1</option>
+            <option value="HbA1c">HbA1c</option>
+
+
+            </select>
+            <br><br>
+
+            <label for="samp_type">Type of Sample :- </label>
+
+            <br><br>
+            <select name="sample_type" id="sample">
+            <option value="Blood">Blood</option>
+            <option value="Swab">Swab</option>
+            <option value="Urine">Urine</option>
+            </select>
+
+            <br><br>
+
+
+            
+            <label>Way of Storage of Sample :- </label>
+            <br><br>
+
+            <select name="storage_sample" id="sample">
+                <option value="Normal">Normal</option>
+                <option value="Advanced">Advanced</option>
+                </select>
+
+            <br><br>            
+
+
+            
+            
+            
+            
+            <label>Test booking Time in HH.MM :- </label>
+            
+            <br><br>
+            
+            <input id="book_time" name="test_booking_time" required="required">
+
+            <br><br>
+
+            <label>Cut-Off Schedule :- </label><br><br>
+
+            <select name="cut_off_schedule" id="sample">
+                <option value="daily">daily</option>
+                <option value="by5pm">Sample By 5pm</option>
+                </select>
+
+
+            <br><br>
+
+            <label>Cut-off time in HH.MM</label>
+            <br><br>
+            
+            <input id="cut_off" name="cut_off_time" required="required">
+
+            <br><br>
+
+            <label>Traffic Conditions :- </label><br><br>
+            <select name="Traffic_conditions" id="sample" required="required">
+            <option value="Medium Traffic">Medium Traffic</option>
+            <option value="Low Traffic">Low Traffic</option>
+            <option value="High Traffic">High Traffic</option>
+            </select>
+            <br><br>
+
+
+            <label>Time taken to Reach the Patient in Minutes :- </label><br><br>
+
+            <input id="reach_time" name="time_to_reach_patient" required="required">
+            
+            <br><br>
+
+            <label>Time taken For Sample Collection in Minutes :- </label><br><br>
+            
+            <input id="sample_time" name="sample_collection_time" required="required">
+
+            <br><br>
+
+            <label>Time taken to Reach the <Label></Label> in Minutes :- </label><br><br>
+
+            <input id="reach_lab_time" name="time_to_reach_lab" required="required">
+
+            <br><br>
+
+            
+            
+            <br><br><button id="pred" type="Predict">Prediction</button>
+            <br>
+            
+            
+            
+    
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{prediction_text}}<h3>
+    </div>
+
+</body>
+
+</html>
